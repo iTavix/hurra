@@ -3,76 +3,38 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- ARTIFACT:START -->
-<title>Private Women Experience</title>
+<title>Something Special at Nahāra</title>
+<meta name="description" content="An exclusive day for women. Sunday 27th September at Nahāra bungalows &amp; beach bar, Punta Popy, Las Terrenas.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Instrument+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Jost:wght@200;300;400;500&display=swap">
 <style>
-/* ─────────── tokens ─────────── */
+/* ─────────── tokens — palette letta dal poster ─────────── */
 :root{
-  --ground:#FCFBF9;
-  --ground-blur:rgba(252,251,249,.78);
-  --raise:#FFFFFF;
-  --ink:#17150F;
-  --ink-2:#56514A;
-  --muted:#8C867C;
-  --line:#E8E3DA;
-  --line-soft:#F1EDE6;
-  --accent:#A57C2B;
-  --accent-soft:#C9A55E;
-  --sky-a:#DCEEF4; --sky-b:#B4DCE9;
-  --sea-a:#2AA3B4; --sea-b:#0C6470;
-  --sand-a:#EDE2CD; --sand-b:#D9C7A8;
-  --sun:rgba(255,244,214,.95);
-  --panel-shadow:0 30px 70px -40px rgba(23,21,15,.45);
+  --ground:#FBF4E9;
+  --ground-2:#F6ECDC;
+  --ground-blur:rgba(251,244,233,.82);
+  --ink:#4A3221;
+  --ink-2:#7A6350;
+  --muted:#A08D77;
+  --line:#E7D9C4;
+  --line-soft:#F1E6D5;
+  --accent:#B07A3C;
+  --accent-soft:#CFA96F;
+  --shadow:0 30px 70px -40px rgba(74,50,33,.5);
+  --shadow-soft:0 18px 44px -30px rgba(74,50,33,.4);
 
-  --display:"Cormorant Garamond",Cambria,"Times New Roman",serif;
-  --sans:"Instrument Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+  --script:"Great Vibes",cursive;
+  --sans:"Jost",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
 
   --wrap:1040px;
+  --cover:1400px;
   --gutter:clamp(22px,5vw,40px);
-  --section:clamp(84px,11vw,152px);
-}
-@media (prefers-color-scheme:dark){
-  :root:not([data-theme="light"]){
-    --ground:#0B0D0D;
-    --ground-blur:rgba(11,13,13,.76);
-    --raise:#131615;
-    --ink:#F4F1EA;
-    --ink-2:#B4AEA3;
-    --muted:#857F75;
-    --line:#242826;
-    --line-soft:#1B1E1D;
-    --accent:#D9B872;
-    --accent-soft:#B8934E;
-    --sky-a:#16333D; --sky-b:#0F2630;
-    --sea-a:#177C8B; --sea-b:#06414A;
-    --sand-a:#3A3226; --sand-b:#241F18;
-    --sun:rgba(255,232,178,.72);
-    --panel-shadow:0 30px 80px -40px rgba(0,0,0,.9);
-  }
-}
-:root[data-theme="dark"]{
-  --ground:#0B0D0D;
-  --ground-blur:rgba(11,13,13,.76);
-  --raise:#131615;
-  --ink:#F4F1EA;
-  --ink-2:#B4AEA3;
-  --muted:#857F75;
-  --line:#242826;
-  --line-soft:#1B1E1D;
-  --accent:#D9B872;
-  --accent-soft:#B8934E;
-  --sky-a:#16333D; --sky-b:#0F2630;
-  --sea-a:#177C8B; --sea-b:#06414A;
-  --sand-a:#3A3226; --sand-b:#241F18;
-  --sun:rgba(255,232,178,.72);
-  --panel-shadow:0 30px 80px -40px rgba(0,0,0,.9);
+  --section:clamp(80px,10vw,144px);
 }
 
 /* ─────────── base ─────────── */
-*{box-sizing:border-box}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:76px}
 body{
   margin:0;
@@ -80,7 +42,8 @@ body{
   color:var(--ink);
   font-family:var(--sans);
   font-size:17px;
-  line-height:1.6;
+  font-weight:300;
+  line-height:1.65;
   -webkit-font-smoothing:antialiased;
   text-rendering:optimizeLegibility;
 }
@@ -89,170 +52,127 @@ body{
   *{animation:none!important;transition:none!important}
 }
 a{color:inherit;text-decoration:none}
-*{-webkit-tap-highlight-color:transparent}
 :focus,:focus-visible{outline:none;box-shadow:none}
 html.kb :focus{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
 section[id]{scroll-margin-top:84px}
+::selection{background:rgba(176,122,60,.22);color:var(--ink)}
 
 .wrap{width:100%;max-width:var(--wrap);margin-inline:auto;padding-inline:var(--gutter)}
 .section{padding-block:var(--section)}
 .rule{border:0;border-top:1px solid var(--line);margin:0}
 
 .eyebrow{
-  font-size:11.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;
+  font-size:11px;font-weight:400;letter-spacing:.24em;text-transform:uppercase;
   color:var(--muted);margin:0;
 }
 .lede{
-  font-size:clamp(18px,2.1vw,21px);line-height:1.55;color:var(--ink-2);
-  max-width:38ch;margin:0;
+  font-size:clamp(17px,2vw,20px);line-height:1.6;color:var(--ink-2);
+  max-width:40ch;margin:0;font-weight:300;
 }
-.serif{font-family:var(--display);font-weight:300}
+.script{font-family:var(--script);font-weight:400;line-height:1.15}
 
 /* ─────────── nav ─────────── */
 .nav{
   position:sticky;top:0;z-index:50;
   background:var(--ground-blur);
-  -webkit-backdrop-filter:saturate(180%) blur(20px);
-  backdrop-filter:saturate(180%) blur(20px);
+  -webkit-backdrop-filter:saturate(150%) blur(20px);
+  backdrop-filter:saturate(150%) blur(20px);
   border-bottom:1px solid var(--line-soft);
 }
-.nav-in{
-  display:flex;align-items:center;justify-content:space-between;gap:24px;
-  height:56px;
-}
-.mark{display:flex;flex-direction:column;line-height:1;gap:3px}
-.mark span:first-child{font-size:8.5px;letter-spacing:.28em;color:var(--muted);font-weight:600}
-.mark span:last-child{font-size:14px;letter-spacing:.2em;font-weight:600}
-.nav-links{display:none;gap:30px;font-size:13.5px;color:var(--ink-2)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;gap:24px;height:62px}
+.mark{display:flex;align-items:center}
+.mark img{display:block;height:24px;width:auto;mix-blend-mode:multiply}
+.nav-links{display:none;gap:32px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2)}
 .nav-links a{transition:color .2s ease}
-.nav-links a:hover{color:var(--ink)}
-@media (min-width:760px){.nav-links{display:flex}}
+.nav-links a:hover{color:var(--accent)}
+@media (min-width:840px){.nav-links{display:flex}}
 
 .btn{
   display:inline-flex;align-items:center;gap:8px;
-  border-radius:980px;padding:11px 22px;
-  font-size:14.5px;font-weight:500;letter-spacing:-.005em;
+  border-radius:980px;padding:12px 26px;
+  font-size:11.5px;font-weight:400;letter-spacing:.16em;text-transform:uppercase;
   border:1px solid transparent;
-  transition:transform .18s ease,opacity .18s ease,background .18s ease,border-color .18s ease;
+  transition:transform .18s ease,opacity .18s ease,border-color .18s ease,background .18s ease;
   white-space:nowrap;
 }
 .btn:active{transform:scale(.975)}
 .btn-solid{background:var(--ink);color:var(--ground)}
 .btn-solid:hover{opacity:.86}
-.btn-ghost{border-color:var(--line);color:var(--ink)}
-.btn-ghost:hover{border-color:var(--muted)}
-.btn-sm{padding:7px 16px;font-size:13.5px}
-.link-arrow{color:var(--accent);font-size:15.5px;font-weight:500;display:inline-flex;align-items:center;gap:6px}
+.btn-ghost{border-color:var(--accent-soft);color:var(--ink)}
+.btn-ghost:hover{border-color:var(--accent);background:rgba(176,122,60,.06)}
+.btn-sm{padding:8px 18px;font-size:10.5px}
+.link-arrow{
+  color:var(--accent);font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;
+  display:inline-flex;align-items:center;gap:8px;
+}
 .link-arrow svg{transition:transform .2s ease}
 .link-arrow:hover svg{transform:translateX(3px)}
 
-/* ─────────── hero ─────────── */
-.hero{padding-top:clamp(64px,9vw,110px);padding-bottom:clamp(40px,6vw,64px);text-align:center}
-.hero .eyebrow{margin-bottom:clamp(24px,4vw,38px)}
-.kicker{
-  font-size:clamp(15px,2.6vw,22px);font-weight:500;
-  letter-spacing:.34em;text-transform:uppercase;
-  margin:0 0 clamp(4px,1vw,8px);padding-left:.34em;color:var(--ink);
+/* ─────────── cover ─────────── */
+.cover{max-width:var(--cover);margin-inline:auto;padding:clamp(20px,3vw,34px) var(--gutter) 0}
+.cover img{
+  display:block;width:100%;height:auto;
+  border-radius:clamp(14px,1.8vw,22px);
+  box-shadow:var(--shadow);
 }
-.title{
-  font-family:var(--display);font-weight:300;
-  font-size:clamp(56px,13.5vw,150px);
-  line-height:.9;letter-spacing:.01em;text-transform:uppercase;
-  margin:0;text-wrap:balance;
+
+/* ─────────── intro ─────────── */
+.intro{text-align:center;padding-block:clamp(44px,6vw,72px) clamp(40px,5vw,60px)}
+.intro h1{
+  font-size:clamp(15px,2.4vw,22px);font-weight:300;
+  letter-spacing:.30em;text-transform:uppercase;
+  margin:22px 0 26px;padding-left:.30em;color:var(--ink);
 }
+.intro .lede{margin-inline:auto;max-width:46ch}
+.intro-cta{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:clamp(28px,4vw,38px)}
 .ornament{
   display:flex;align-items:center;justify-content:center;gap:18px;
-  margin:clamp(26px,4vw,40px) auto clamp(18px,2.5vw,26px);
-  max-width:420px;color:var(--accent-soft);
+  margin:clamp(30px,4vw,44px) auto 0;max-width:380px;color:var(--accent-soft);
 }
 .ornament i{flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--line),transparent)}
 .ornament svg{display:block;flex:none}
-.subtitle{
-  font-size:clamp(13px,1.8vw,15px);letter-spacing:.28em;text-transform:uppercase;
-  color:var(--ink-2);margin:0 0 clamp(26px,4vw,38px);padding-left:.28em;font-weight:500;
-}
-.hero .lede{margin-inline:auto;text-align:center;max-width:44ch}
-.hero-cta{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:clamp(28px,4vw,40px)}
 
-/* ─────────── horizon panel ─────────── */
-.panel{
-  position:relative;overflow:hidden;border-radius:clamp(16px,2vw,26px);
-  aspect-ratio:16/7;min-height:230px;
-  box-shadow:var(--panel-shadow);
-  background:linear-gradient(180deg,
-    var(--sky-a) 0%, var(--sky-b) 33%,
-    var(--sea-a) 34%, var(--sea-b) 62%,
-    var(--sand-a) 63%, var(--sand-b) 100%);
-  isolation:isolate;
-}
-.panel::before{
-  content:"";position:absolute;inset:0;
-  background:
-    radial-gradient(58% 46% at 50% 30%, var(--sun) 0%, transparent 62%),
-    repeating-linear-gradient(180deg, rgba(255,255,255,.10) 0 1px, transparent 1px 7px);
-  background-blend-mode:screen,soft-light;
-  mix-blend-mode:screen;
-  animation:drift 22s ease-in-out infinite alternate;
-}
-.panel::after{
-  content:"";position:absolute;inset:0;
-  background:
-    linear-gradient(180deg,rgba(255,255,255,.16),transparent 26%),
-    radial-gradient(120% 70% at 50% 100%, transparent 40%, rgba(23,21,15,.22) 100%);
-  pointer-events:none;
-}
-@keyframes drift{
-  from{transform:translate3d(-2.5%,0,0) scale(1.04)}
-  to{transform:translate3d(2.5%,-1.5%,0) scale(1.09)}
-}
-.panel-caption{
-  position:absolute;left:0;right:0;bottom:0;z-index:2;
-  display:flex;flex-wrap:wrap;justify-content:center;gap:8px 26px;
-  padding:clamp(16px,2.4vw,26px);
-  font-size:11.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;
-  color:rgba(255,255,255,.94);
-  text-shadow:0 1px 14px rgba(12,40,46,.55);
-}
-
-/* ─────────── facts strip ─────────── */
+/* ─────────── facts ─────────── */
 .facts{display:grid;gap:0;grid-template-columns:1fr;border-top:1px solid var(--line)}
 @media (min-width:640px){.facts{grid-template-columns:repeat(2,1fr)}}
 @media (min-width:900px){.facts{grid-template-columns:repeat(4,1fr)}}
-.fact{
-  display:flex;flex-direction:column;gap:7px;
-  padding:24px 0 26px;border-bottom:1px solid var(--line);
-}
+.fact{display:flex;flex-direction:column;gap:8px;padding:24px 0 26px;border-bottom:1px solid var(--line)}
 @media (min-width:640px){
   .fact{padding-inline:0 28px}
   .fact + .fact{padding-left:28px;border-left:1px solid var(--line)}
 }
-@media (min-width:640px) and (max-width:899px){
-  .fact:nth-child(odd){padding-left:0;border-left:0}
-}
+@media (min-width:640px) and (max-width:899px){.fact:nth-child(odd){padding-left:0;border-left:0}}
 @media (min-width:900px){.fact:nth-child(4n+1){padding-left:0;border-left:0}}
-.fact dt{font-size:11.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
-.fact dd{margin:0;font-size:17px;font-weight:500;letter-spacing:-.01em;color:var(--ink)}
+.fact dt{font-size:10.5px;letter-spacing:.20em;text-transform:uppercase;color:var(--muted)}
+.fact dd{margin:0;font-size:16.5px;font-weight:400;color:var(--ink)}
 .fact dd em{font-style:normal;color:var(--accent)}
 
 /* ─────────── statement ─────────── */
-.statement{display:grid;gap:clamp(28px,5vw,64px);align-items:start}
-@media (min-width:860px){.statement{grid-template-columns:1.15fr 1fr}}
+.statement{display:grid;gap:clamp(28px,5vw,64px);align-items:center}
+@media (min-width:860px){.statement{grid-template-columns:1.05fr 1fr}}
 .statement h2{
-  font-family:var(--display);font-weight:300;
-  font-size:clamp(38px,6.4vw,74px);line-height:1.02;letter-spacing:-.005em;
+  font-size:clamp(30px,4.6vw,54px);font-weight:200;
+  letter-spacing:.04em;text-transform:uppercase;line-height:1.18;
   margin:0;text-wrap:balance;
 }
-.statement h2 em{font-style:italic;color:var(--accent)}
-.statement p{margin:0 0 20px;color:var(--ink-2);max-width:60ch}
+.statement h2 .script{
+  display:block;font-size:clamp(48px,8vw,96px);
+  text-transform:none;letter-spacing:0;color:var(--accent);
+  margin-top:6px;
+}
+.statement p{margin:0 0 20px;color:var(--ink-2);max-width:58ch}
 .statement p:last-child{margin-bottom:0}
 
 /* ─────────── section heads ─────────── */
-.head{margin-bottom:clamp(38px,5vw,62px);max-width:52ch}
-.head h2{
-  font-size:clamp(30px,4.4vw,50px);font-weight:600;letter-spacing:-.028em;line-height:1.06;
-  margin:14px 0 0;text-wrap:balance;
+.head{margin-bottom:clamp(38px,5vw,60px);max-width:52ch}
+.head h2,.place-h2{
+  font-size:clamp(26px,3.8vw,44px);font-weight:200;
+  letter-spacing:.03em;text-transform:uppercase;line-height:1.2;
+  text-wrap:balance;
 }
-.head p{margin:16px 0 0;color:var(--ink-2);max-width:46ch}
+.head h2{margin:16px 0 0}
+.place-h2{margin:16px 0 22px}
+.head p{margin:18px 0 0;color:var(--ink-2);max-width:46ch}
 
 /* ─────────── the day ─────────── */
 .band{
@@ -263,174 +183,110 @@ section[id]{scroll-margin-top:84px}
 .band:last-of-type{border-bottom:1px solid var(--line)}
 @media (min-width:760px){.band{grid-template-columns:180px 1fr;gap:0 40px}}
 .band-label{
-  display:flex;align-items:baseline;gap:10px;
-  font-size:11.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;
-  color:var(--accent);padding-top:5px;
+  font-size:10.5px;letter-spacing:.20em;text-transform:uppercase;
+  color:var(--accent);padding-top:8px;
 }
-.band-items{display:flex;flex-direction:column;gap:22px;margin:10px 0 0}
+.band-items{display:flex;flex-direction:column;gap:24px;margin:10px 0 0}
 @media (min-width:760px){.band-items{margin-top:0}}
 .item h3{
-  font-size:clamp(20px,2.5vw,25px);font-weight:500;letter-spacing:-.02em;
-  margin:0 0 5px;line-height:1.2;
+  font-family:var(--script);font-weight:400;
+  font-size:clamp(30px,3.6vw,40px);letter-spacing:0;
+  margin:0 0 2px;line-height:1.1;transition:color .25s ease;
 }
+.item:hover h3{color:var(--accent)}
 .item p{margin:0;color:var(--ink-2);font-size:16px;max-width:58ch}
 
-/* ─────────── included ─────────── */
-.includes{display:grid;grid-template-columns:1fr;gap:0;border-top:1px solid var(--line)}
-@media (min-width:600px){.includes{grid-template-columns:1fr 1fr;column-gap:48px}}
-@media (min-width:960px){.includes{grid-template-columns:repeat(3,1fr);column-gap:40px}}
-.inc{
-  display:flex;align-items:flex-start;gap:13px;
-  padding-block:19px;border-bottom:1px solid var(--line);
-}
-.inc svg{flex:none;margin-top:4px;color:var(--accent)}
-.inc span{font-size:16.5px;letter-spacing:-.01em}
-.inc small{display:block;color:var(--muted);font-size:14px;letter-spacing:0}
-
-/* ─────────── location ─────────── */
+/* ─────────── location / poster ─────────── */
 .place{display:grid;gap:clamp(30px,4vw,56px);align-items:center}
 @media (min-width:860px){.place{grid-template-columns:1fr 1fr}}
-.place .panel{aspect-ratio:5/4;min-height:280px}
 .place p{color:var(--ink-2);margin:0 0 18px;max-width:46ch}
+.shot{
+  position:relative;overflow:hidden;border-radius:clamp(14px,1.8vw,22px);
+  aspect-ratio:5/4;box-shadow:var(--shadow-soft);background:var(--ground-2);
+}
+.shot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
 .coords{
-  display:flex;flex-wrap:wrap;gap:8px 20px;margin:26px 0 0;padding:0;list-style:none;
-  font-size:13px;letter-spacing:.04em;color:var(--muted);
-  font-variant-numeric:tabular-nums;
+  display:flex;flex-wrap:wrap;gap:8px 22px;margin:28px 0 0;padding:0;list-style:none;
+  font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);
 }
 .coords li{display:flex;gap:8px}
-.coords b{font-weight:500;color:var(--ink-2)}
+.coords b{font-weight:400;color:var(--ink-2)}
+.poster-fig{margin:0;max-width:390px;justify-self:center}
+.poster-fig img{display:block;width:100%;height:auto;border-radius:12px;box-shadow:var(--shadow)}
 
 /* ─────────── reserve ─────────── */
 .reserve{text-align:center}
 .reserve h2{
-  font-family:var(--display);font-weight:300;text-transform:uppercase;letter-spacing:.02em;
-  font-size:clamp(38px,7.6vw,88px);line-height:1;margin:0;
+  font-family:var(--script);font-weight:400;
+  font-size:clamp(52px,10vw,120px);line-height:1.05;margin:0;color:var(--ink);
 }
-.reserve .lede{margin:26px auto 0;text-align:center}
+.reserve .lede{margin:24px auto 0;text-align:center}
 .spots{
   display:inline-flex;align-items:center;gap:11px;
-  margin-bottom:clamp(26px,3.6vw,38px);
-  padding:9px 20px;border:1px solid var(--accent-soft);border-radius:980px;
-  font-size:11.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);
+  margin-bottom:clamp(24px,3.4vw,34px);
+  padding:9px 22px;border:1px solid var(--accent-soft);border-radius:980px;
+  font-size:10.5px;letter-spacing:.20em;text-transform:uppercase;color:var(--accent);
 }
 .dot{width:6px;height:6px;border-radius:50%;background:var(--accent);flex:none;animation:pulse 2.6s ease-in-out infinite}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.32}}
 .channels{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:clamp(30px,4vw,42px)}
-.note{margin:26px 0 0;font-size:13.5px;color:var(--muted)}
+.note{margin:28px 0 0;font-size:12.5px;color:var(--muted);letter-spacing:.04em}
+.note a{color:var(--ink-2);border-bottom:1px solid var(--line);padding-bottom:1px;transition:color .2s ease,border-color .2s ease}
+.note a:hover{color:var(--accent);border-color:var(--accent-soft)}
 
 /* ─────────── footer ─────────── */
-.foot{padding-block:44px 56px;border-top:1px solid var(--line)}
-.foot-in{display:flex;flex-wrap:wrap;gap:20px 32px;align-items:center;justify-content:space-between}
-.foot p{margin:0;font-size:13px;color:var(--muted)}
-.foot nav{display:flex;flex-wrap:wrap;gap:22px;font-size:13px;color:var(--muted)}
-.foot nav a:hover{color:var(--ink-2)}
-/* ─────────── selection ─────────── */
-::selection{background:rgba(165,124,43,.20);color:var(--ink)}
-@media (prefers-color-scheme:dark){
-  :root:not([data-theme="light"]) ::selection{background:rgba(217,184,114,.24)}
-}
-:root[data-theme="dark"] ::selection{background:rgba(217,184,114,.24)}
+.foot{padding-block:44px 56px;border-top:1px solid var(--line);background:var(--ground-2)}
+.foot-in{display:flex;flex-wrap:wrap;gap:22px 32px;align-items:center;justify-content:space-between}
+.foot .mark img{height:30px}
+.foot p{margin:0;font-size:10.5px;color:var(--muted);letter-spacing:.20em;text-transform:uppercase}
+.foot nav{display:flex;flex-wrap:wrap;gap:24px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.foot nav a:hover{color:var(--accent)}
 
 /* ─────────── motion ─────────── */
 @media (prefers-reduced-motion:no-preference){
-
-  /* hero — orchestrated load sequence */
-  .hero > *{animation:rise .9s cubic-bezier(.16,.84,.44,1) both}
-  .hero > .eyebrow{animation-delay:.04s}
-  .hero > .kicker{animation-delay:.12s}
-  .hero > .ornament{animation-delay:.74s}
-  .hero > .subtitle{animation-delay:.84s}
-  .hero > .lede{animation-delay:.94s}
-  .hero > .hero-cta{animation-delay:1.04s}
-  .title{animation:none}
-  .title span{
-    display:inline-block;
-    animation:letter 1.1s cubic-bezier(.2,.9,.28,1) both;
-    animation-delay:calc(.24s + var(--i) * .052s);
-  }
-  @keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
-  @keyframes letter{
-    from{opacity:0;transform:translateY(.34em) scale(.965);filter:blur(7px)}
+  .cover img{animation:cover-in 1.5s cubic-bezier(.16,.84,.44,1) both}
+  @keyframes cover-in{
+    from{opacity:0;transform:scale(1.04) translateY(14px);filter:blur(10px)}
     to{opacity:1;transform:none;filter:blur(0)}
   }
+  .intro > *{animation:rise .9s cubic-bezier(.16,.84,.44,1) both}
+  .intro > .eyebrow{animation-delay:.55s}
+  .intro > h1{animation-delay:.68s}
+  .intro > .lede{animation-delay:.81s}
+  .intro > .intro-cta{animation-delay:.94s}
+  .intro > .ornament{animation-delay:1.07s}
+  @keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
 
-  /* scroll-driven reveals — degrade to fully visible where unsupported */
   @supports (animation-timeline:view()){
-    .head,.statement,.band,.includes,.place,.facts,.reserve > *{
+    .head,.statement,.band,.place,.facts,.reserve > *{
       animation:reveal-in linear both;
       animation-timeline:view();
       animation-range:entry 4% cover 24%;
     }
-    .hero-panel{
-      animation:panel-in linear both;
-      animation-timeline:view();
-      animation-range:entry 0% cover 36%;
-    }
-    @keyframes reveal-in{
-      from{opacity:0;transform:translateY(28px)}
-      to{opacity:1;transform:none}
-    }
-    @keyframes panel-in{
-      from{opacity:.45;transform:scale(.9) translateY(24px);border-radius:56px}
-      to{opacity:1;transform:none}
-    }
+    @keyframes reveal-in{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
   }
   @supports (animation-timeline:scroll()){
-    .nav{
-      animation:nav-settle linear both;
-      animation-timeline:scroll();
-      animation-range:0 140px;
-    }
+    .nav{animation:nav-settle linear both;animation-timeline:scroll();animation-range:0 140px}
     @keyframes nav-settle{
       from{border-bottom-color:transparent;box-shadow:0 0 0 rgba(0,0,0,0)}
-      to{border-bottom-color:var(--line);box-shadow:0 10px 30px -26px rgba(23,21,15,.55)}
+      to{border-bottom-color:var(--line);box-shadow:0 10px 30px -26px rgba(74,50,33,.5)}
     }
   }
-
-  /* micro-interactions */
-  .btn-solid:hover{transform:translateY(-1px)}
-  .btn-ghost:hover{transform:translateY(-1px)}
-  .item h3{transition:color .25s ease}
-  .item:hover h3{color:var(--accent)}
+  .btn-solid:hover,.btn-ghost:hover{transform:translateY(-1px)}
 }
-
-/* ─────────── photography ─────────── */
-.panel img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;z-index:0}
-.panel::after{z-index:1}
-.panel.has-photo::before{content:none}
-.panel.has-photo::after{
-  background:
-    linear-gradient(180deg,rgba(6,22,26,.16),transparent 30%),
-    linear-gradient(0deg,rgba(6,22,26,.80) 0%,rgba(6,22,26,.36) 26%,transparent 54%);
-}
-.hero-panel{aspect-ratio:1024/260;min-height:0}
-@media (max-width:700px){.hero-panel{aspect-ratio:3/2}}
-.place-h2{
-  font-size:clamp(30px,4.4vw,50px);font-weight:600;letter-spacing:-.028em;
-  line-height:1.06;margin:14px 0 22px;text-wrap:balance;
-}
-.poster-fig{margin:0;max-width:400px;justify-self:center}
-.poster-fig img{
-  display:block;width:100%;height:auto;border-radius:12px;
-  box-shadow:var(--panel-shadow);
-}
-
-.note a{color:var(--ink-2);border-bottom:1px solid var(--line);padding-bottom:1px;transition:color .2s ease,border-color .2s ease}
-.note a:hover{color:var(--accent);border-color:var(--accent-soft)}
 </style>
 </head>
 <body>
 
 <header class="nav">
   <div class="wrap nav-in">
-    <a class="mark" href="#top" aria-label="Las Terrenas Sunscape — home">
-      <span>LAS TERRENAS</span>
-      <span>SUNSCAPE</span>
+    <a class="mark" href="#top" aria-label="Hurra Events — home">
+      <img src="hurra-mark.jpg" alt="Hurra Events">
     </a>
     <nav class="nav-links" aria-label="Sections">
       <a href="#day">The day</a>
-      <a href="#included">Included</a>
       <a href="#place">Location</a>
+      <a href="#invite">The poster</a>
       <a href="#reserve">Reserve</a>
     </nav>
     <a class="btn btn-solid btn-sm" href="#reserve">Reserve</a>
@@ -439,11 +295,20 @@ section[id]{scroll-margin-top:84px}
 
 <main id="top">
 
-  <!-- HERO -->
-  <section class="wrap hero">
-    <p class="eyebrow">Sunday 27 September 2026 · Las Terrenas</p>
-    <p class="kicker">Private Women</p>
-    <h1 class="title" aria-label="Experience"><span style="--i:0" aria-hidden="true">E</span><span style="--i:1" aria-hidden="true">X</span><span style="--i:2" aria-hidden="true">P</span><span style="--i:3" aria-hidden="true">E</span><span style="--i:4" aria-hidden="true">R</span><span style="--i:5" aria-hidden="true">I</span><span style="--i:6" aria-hidden="true">E</span><span style="--i:7" aria-hidden="true">N</span><span style="--i:8" aria-hidden="true">C</span><span style="--i:9" aria-hidden="true">E</span></h1>
+  <!-- COVER -->
+  <div class="cover">
+    <img src="copertina.jpg" alt="Something Special is coming for you — an exclusive day for women, Sunday 27th September at Nahāra bungalows &amp; beach bar, Punta Popy, Las Terrenas. Wellness, beauty, healthy food, DJ, aperitivo, connection." decoding="async">
+  </div>
+
+  <!-- INTRO -->
+  <section class="wrap intro">
+    <p class="eyebrow">Sunday 27th September · Punta Popy, Las Terrenas</p>
+    <h1>An exclusive day for women</h1>
+    <p class="lede">One Sunday on the sand at Punta Popy, a small group of women, and a beach bar kept entirely to ourselves.</p>
+    <div class="intro-cta">
+      <a class="btn btn-solid" href="#reserve">Reserve your spot</a>
+      <a class="btn btn-ghost" href="#day">See the day</a>
+    </div>
     <div class="ornament" aria-hidden="true">
       <i></i>
       <svg width="26" height="26" viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round">
@@ -453,43 +318,26 @@ section[id]{scroll-margin-top:84px}
       </svg>
       <i></i>
     </div>
-    <p class="subtitle">A day to reconnect</p>
-    <p class="lede">One island Sunday, one small group of women, and a stretch of Caribbean beach kept entirely to ourselves.</p>
-    <div class="hero-cta">
-      <a class="btn btn-solid" href="#reserve">Reserve your spot</a>
-      <a class="btn btn-ghost" href="#day">See the day</a>
-    </div>
-  </section>
-
-  <!-- HORIZON -->
-  <section class="wrap" style="padding-bottom:clamp(56px,7vw,88px)">
-    <div class="panel hero-panel has-photo">
-      <img src="scene.jpg" alt="Three women resting in beach chairs at the water.s edge, from the event poster artwork." decoding="async">
-      <p class="panel-caption">
-        <span>Relax</span><span>Beauty</span><span>Healthy food</span>
-        <span>Great music</span><span>Connection</span><span>Networking</span>
-      </p>
-    </div>
   </section>
 
   <!-- FACTS -->
   <section class="wrap" style="padding-bottom:var(--section)">
     <dl class="facts">
-      <div class="fact"><dt>Date</dt><dd>Sunday 27 September</dd></div>
-      <div class="fact"><dt>Venue</dt><dd>Afreeka Beach Hotel</dd></div>
-      <div class="fact"><dt>Where</dt><dd>Las Terrenas, Samaná</dd></div>
-      <div class="fact"><dt>Availability</dt><dd><em>Very limited spots</em></dd></div>
+      <div class="fact"><dt>Date</dt><dd>Sunday 27th September</dd></div>
+      <div class="fact"><dt>Venue</dt><dd>Nahāra bungalows &amp; beach bar</dd></div>
+      <div class="fact"><dt>Where</dt><dd>Punta Popy, Las Terrenas</dd></div>
+      <div class="fact"><dt>Access</dt><dd><em>By reservation only</em></dd></div>
     </dl>
   </section>
 
   <!-- STATEMENT -->
   <section class="section wrap" style="padding-top:0">
     <div class="statement">
-      <h2>Good women.<br><em>Brighter days.</em></h2>
+      <h2>People. Places.<span class="script">Extraordinary moments.</span></h2>
       <div>
-        <p>Between the school run, the business, the messages that never stop — a whole day that asks nothing of you except that you show up.</p>
-        <p>We take over a beach hotel for one Sunday. You move, you eat well, you get looked after, you meet women who are building something too. Then the sun goes down and we stay for the moon.</p>
-        <p>Small on purpose. Private on purpose.</p>
+        <p>Between the business, the family, the messages that never stop — one whole day that asks nothing of you except that you show up.</p>
+        <p>We take over a beach bar for a Sunday. You move, you eat well, you get looked after, you meet women who are building something too. Then the sun drops into the sea and the music starts.</p>
+        <p>Small on purpose. Exclusive on purpose.</p>
       </div>
     </div>
   </section>
@@ -500,7 +348,7 @@ section[id]{scroll-margin-top:84px}
   <section class="section wrap" id="day">
     <div class="head">
       <p class="eyebrow">The day</p>
-      <h2>Eight moments, from first light to full moon.</h2>
+      <h2>Six things, from morning light to the last song.</h2>
       <p>Everything runs at the pace of the beach. Join what calls you, skip what doesn't.</p>
     </div>
 
@@ -508,12 +356,8 @@ section[id]{scroll-margin-top:84px}
       <div class="band-label">Morning</div>
       <div class="band-items">
         <article class="item">
-          <h3>Yoga</h3>
-          <p>An opening flow on the sand, while the bay is still quiet and the light is still soft.</p>
-        </article>
-        <article class="item">
-          <h3>Aquagym</h3>
-          <p>Straight into the water. Low impact, high laughter — the warm-up nobody expects to enjoy.</p>
+          <h3>Wellness</h3>
+          <p>The day opens slowly, on the sand, while the bay is still quiet and the light is still soft.</p>
         </article>
       </div>
     </div>
@@ -522,12 +366,8 @@ section[id]{scroll-margin-top:84px}
       <div class="band-label">Midday</div>
       <div class="band-items">
         <article class="item">
-          <h3>Healthy lunch</h3>
-          <p>A long table in the shade. Fresh fish, island produce, nothing that slows the afternoon down.</p>
-        </article>
-        <article class="item">
-          <h3>Vegan smoothies</h3>
-          <p>Mango, passion fruit, coconut, ginger — pulled from the bar all day long.</p>
+          <h3>Healthy food</h3>
+          <p>A long table in the shade. Fresh, light, island produce — nothing that slows the afternoon down.</p>
         </article>
       </div>
     </div>
@@ -536,12 +376,8 @@ section[id]{scroll-margin-top:84px}
       <div class="band-label">Afternoon</div>
       <div class="band-items">
         <article class="item">
-          <h3>Beauty &amp; massages</h3>
-          <p>Hands-on time with the team: treatments and massage, booked in turns through the afternoon.</p>
-        </article>
-        <article class="item">
-          <h3>Personal training</h3>
-          <p>A coach on the sand for whoever wants to work — one on one, at your level, no audience.</p>
+          <h3>Beauty</h3>
+          <p>Hands-on time with the team, booked in turns through the warmest hours of the day.</p>
         </article>
       </div>
     </div>
@@ -551,32 +387,23 @@ section[id]{scroll-margin-top:84px}
       <div class="band-items">
         <article class="item">
           <h3>Aperitivo</h3>
-          <p>Feet in the sand, glass in hand, great music. The part of the day where the real conversations start.</p>
+          <p>Feet in the sand, glass in hand, the sun going down over Punta Popy.</p>
         </article>
         <article class="item">
-          <h3>Full moon ritual</h3>
-          <p>We close together on the beach under the September moon — the reason the date is the date.</p>
+          <h3>DJ</h3>
+          <p>The set starts as the light goes. This is the part of the day nobody plans to stay for, and everybody does.</p>
         </article>
       </div>
     </div>
-  </section>
 
-  <!-- INCLUDED -->
-  <section class="section wrap" id="included" style="padding-top:0">
-    <div class="head">
-      <p class="eyebrow">Included</p>
-      <h2>One ticket. The whole Sunday.</h2>
-    </div>
-    <div class="includes">
-      <div class="inc"><svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 8.6 6 12l7.5-8"></path></svg><span>Full day access<small>Afreeka Beach Hotel, private setup</small></span></div>
-      <div class="inc"><svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 8.6 6 12l7.5-8"></path></svg><span>Yoga &amp; aquagym<small>Guided sessions, all levels</small></span></div>
-      <div class="inc"><svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 8.6 6 12l7.5-8"></path></svg><span>Healthy lunch<small>Seated, at the long table</small></span></div>
-      <div class="inc"><svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 8.6 6 12l7.5-8"></path></svg><span>Vegan smoothie bar<small>Open through the day</small></span></div>
-      <div class="inc"><svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 8.6 6 12l7.5-8"></path></svg><span>Beauty &amp; massage<small>Treatment slot per guest</small></span></div>
-      <div class="inc"><svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 8.6 6 12l7.5-8"></path></svg><span>Personal training<small>One-to-one on the beach</small></span></div>
-      <div class="inc"><svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 8.6 6 12l7.5-8"></path></svg><span>Sunset aperitivo<small>Drinks and live music</small></span></div>
-      <div class="inc"><svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 8.6 6 12l7.5-8"></path></svg><span>Full moon ritual<small>Closing circle on the sand</small></span></div>
-      <div class="inc"><svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 8.6 6 12l7.5-8"></path></svg><span>Sunbeds &amp; towels<small>Yours for the day</small></span></div>
+    <div class="band">
+      <div class="band-label">All day</div>
+      <div class="band-items">
+        <article class="item">
+          <h3>Connection</h3>
+          <p>The real reason to come. A small group, no agenda, and the kind of conversations that don't happen at a desk.</p>
+        </article>
+      </div>
     </div>
   </section>
 
@@ -587,22 +414,20 @@ section[id]{scroll-margin-top:84px}
     <div class="place">
       <div>
         <p class="eyebrow">The location</p>
-        <h2 class="place-h2">Afreeka Beach Hotel,<br>Las Terrenas.</h2>
-        <p>On the north coast of the Samaná peninsula, where the palms come down to the waterline and the bay stays calm enough to swim all day.</p>
-        <p>A boutique beach hotel we take over for the occasion — close enough to town to reach easily, far enough down the sand to feel private.</p>
+        <h2 class="place-h2">Nahāra bungalows &amp; beach bar</h2>
+        <p>On the seafront at Punta Popy, the stretch of Las Terrenas where the town goes to watch the sun drop into the sea.</p>
+        <p>Bungalows, a beach bar and a piece of sand we keep for the day — close enough to town to reach easily, far enough along the shore to feel private.</p>
         <ul class="coords">
+          <li><b>Punta Popy</b> Las Terrenas</li>
           <li><b>Samaná</b> Dominican Republic</li>
-          <li><b>19.32° N</b> 69.54° W</li>
           <li><b>Arrival</b> Sunday morning</li>
         </ul>
       </div>
-      <div class="panel has-photo">
-        <img src="bay.jpg" alt="Turquoise bay with a moored sailboat and palms, from the event poster artwork." loading="lazy" decoding="async">
+      <div class="shot">
+        <img src="detail.jpg" alt="Hibiscus flower and a woven lantern on a wooden table by the sea at sunset, from the event artwork." loading="lazy" decoding="async">
       </div>
     </div>
   </section>
-
-  <hr class="rule">
 
   <hr class="rule">
 
@@ -611,44 +436,45 @@ section[id]{scroll-margin-top:84px}
     <div class="place">
       <div>
         <p class="eyebrow">The invitation</p>
-        <h2 class="place-h2">Save the date,<br>and pass it on.</h2>
+        <h2 class="place-h2">Save the date, and pass it on</h2>
         <p>The women who most need a day like this are usually the last to book it for themselves. Send them the poster.</p>
-        <p>Sunday 27 September, Afreeka Beach Hotel. That is the whole message.</p>
+        <p>Sunday 27th September, Nahāra, Punta Popy. That is the whole message.</p>
         <a class="link-arrow" href="poster.jpg" target="_blank" rel="noopener">Open the full poster<svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"></path></svg></a>
       </div>
       <figure class="poster-fig">
-        <img src="poster.jpg" alt="Private Women Experience poster: Sunday 27 September, Afreeka Beach Hotel, Las Terrenas." loading="lazy" decoding="async">
+        <img src="poster.jpg" alt="Event poster: Something Special is coming for you — an exclusive day for women, Sunday 27th September at Nahāra, Punta Popy, Las Terrenas." loading="lazy" decoding="async">
       </figure>
     </div>
   </section>
 
+  <hr class="rule">
+
   <!-- RESERVE -->
   <section class="section wrap reserve" id="reserve">
-    <div class="spots"><i class="dot" aria-hidden="true"></i>Very limited spots</div>
-    <h2>Reserve<br>your day</h2>
+    <div class="spots"><i class="dot" aria-hidden="true"></i>By reservation only</div>
+    <h2>Reserve your day</h2>
     <p class="lede">We keep the group small so the day stays what it promises to be. Message us and we'll confirm your place and send the practical details.</p>
     <div class="channels">
-      <a class="btn btn-solid" href="https://wa.me/393319308529?text=Ciao%2C%20vorrei%20prenotare%20un%20posto%20per%20la%20Private%20Women%20Experience%20di%20domenica%2027%20settembre." target="_blank" rel="noopener">Book on WhatsApp</a>
-      <a class="btn btn-ghost" href="mailto:giulia.barani@hotmail.it?subject=Private%20Women%20Experience%20%E2%80%94%2027%20settembre&body=Ciao%2C%20vorrei%20informazioni%20per%20prenotare%20un%20posto.">Write to us</a>
+      <a class="btn btn-solid" href="https://wa.me/393319308529?text=Ciao%2C%20vorrei%20prenotare%20un%20posto%20per%20la%20giornata%20di%20domenica%2027%20settembre%20a%20Nah%C4%81ra." target="_blank" rel="noopener">Book on WhatsApp</a>
+      <a class="btn btn-ghost" href="mailto:giulia.barani@hotmail.it?subject=Something%20Special%20%E2%80%94%2027%20settembre%20a%20Nah%C4%81ra&body=Ciao%2C%20vorrei%20informazioni%20per%20prenotare%20un%20posto.">Write to us</a>
     </div>
-    <p class="note"><a href="mailto:giulia.barani@hotmail.it">giulia.barani@hotmail.it</a> &nbsp;·&nbsp; <a href="https://wa.me/393319308529" target="_blank" rel="noopener">+39 331 930 8529</a><br>Sunday 27 September · Afreeka Beach Hotel, Las Terrenas</p>
+    <p class="note"><a href="mailto:giulia.barani@hotmail.it">giulia.barani@hotmail.it</a> &nbsp;·&nbsp; <a href="https://wa.me/393319308529" target="_blank" rel="noopener">+39 331 930 8529</a><br>Sunday 27th September · Nahāra, Punta Popy, Las Terrenas</p>
   </section>
 
 </main>
 
 <footer class="foot">
   <div class="wrap foot-in">
-    <a class="mark" href="#top">
-      <span>LAS TERRENAS</span>
-      <span>SUNSCAPE</span>
+    <a class="mark" href="#top" aria-label="Hurra Events — home">
+      <img src="hurra-mark.jpg" alt="Hurra Events">
     </a>
     <nav aria-label="Footer">
       <a href="#day">The day</a>
-      <a href="#included">Included</a>
       <a href="#place">Location</a>
+      <a href="#invite">The poster</a>
       <a href="#reserve">Reserve</a>
     </nav>
-    <p>Sunscape Tours &amp; Travel · Las Terrenas, Dominican Republic</p>
+    <p>People · Places · Extraordinary moments</p>
   </div>
 </footer>
 
@@ -656,6 +482,5 @@ section[id]{scroll-margin-top:84px}
 addEventListener("keydown",function(e){if(e.key==="Tab")document.documentElement.classList.add("kb")});
 addEventListener("mousedown",function(){document.documentElement.classList.remove("kb")});
 </script>
-<!-- ARTIFACT:END -->
 </body>
 </html>
