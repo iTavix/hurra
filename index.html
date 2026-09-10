@@ -90,9 +90,8 @@ body{
 }
 a{color:inherit;text-decoration:none}
 *{-webkit-tap-highlight-color:transparent}
-:focus{outline:none}
-:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
-a:focus:not(:focus-visible),button:focus:not(:focus-visible){outline:none;box-shadow:none}
+:focus,:focus-visible{outline:none;box-shadow:none}
+html.kb :focus{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
 section[id]{scroll-margin-top:84px}
 
 .wrap{width:100%;max-width:var(--wrap);margin-inline:auto;padding-inline:var(--gutter)}
@@ -416,6 +415,8 @@ section[id]{scroll-margin-top:84px}
   box-shadow:var(--panel-shadow);
 }
 
+.note a{color:var(--ink-2);border-bottom:1px solid var(--line);padding-bottom:1px;transition:color .2s ease,border-color .2s ease}
+.note a:hover{color:var(--accent);border-color:var(--accent-soft)}
 </style>
 </head>
 <body>
@@ -630,7 +631,7 @@ section[id]{scroll-margin-top:84px}
       <a class="btn btn-solid" href="https://wa.me/393319308529?text=Ciao%2C%20vorrei%20prenotare%20un%20posto%20per%20la%20Private%20Women%20Experience%20di%20domenica%2027%20settembre." target="_blank" rel="noopener">Book on WhatsApp</a>
       <a class="btn btn-ghost" href="mailto:giulia.barani@hotmail.it?subject=Private%20Women%20Experience%20%E2%80%94%2027%20settembre&body=Ciao%2C%20vorrei%20informazioni%20per%20prenotare%20un%20posto.">Write to us</a>
     </div>
-    <p class="note">Sunday 27 September · Afreeka Beach Hotel, Las Terrenas</p>
+    <p class="note"><a href="mailto:giulia.barani@hotmail.it">giulia.barani@hotmail.it</a> &nbsp;·&nbsp; <a href="https://wa.me/393319308529" target="_blank" rel="noopener">+39 331 930 8529</a><br>Sunday 27 September · Afreeka Beach Hotel, Las Terrenas</p>
   </section>
 
 </main>
@@ -650,6 +651,11 @@ section[id]{scroll-margin-top:84px}
     <p>Sunscape Tours &amp; Travel · Las Terrenas, Dominican Republic</p>
   </div>
 </footer>
+
+<script>
+addEventListener("keydown",function(e){if(e.key==="Tab")document.documentElement.classList.add("kb")});
+addEventListener("mousedown",function(){document.documentElement.classList.remove("kb")});
+</script>
 <!-- ARTIFACT:END -->
 </body>
 </html>
