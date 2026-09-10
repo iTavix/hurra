@@ -89,7 +89,11 @@ body{
   *{animation:none!important;transition:none!important}
 }
 a{color:inherit;text-decoration:none}
-:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:3px}
+*{-webkit-tap-highlight-color:transparent}
+:focus{outline:none}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+a:focus:not(:focus-visible),button:focus:not(:focus-visible){outline:none;box-shadow:none}
+section[id]{scroll-margin-top:84px}
 
 .wrap{width:100%;max-width:var(--wrap);margin-inline:auto;padding-inline:var(--gutter)}
 .section{padding-block:var(--section)}
@@ -321,6 +325,92 @@ a{color:inherit;text-decoration:none}
 .foot p{margin:0;font-size:13px;color:var(--muted)}
 .foot nav{display:flex;flex-wrap:wrap;gap:22px;font-size:13px;color:var(--muted)}
 .foot nav a:hover{color:var(--ink-2)}
+/* ─────────── selection ─────────── */
+::selection{background:rgba(165,124,43,.20);color:var(--ink)}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]) ::selection{background:rgba(217,184,114,.24)}
+}
+:root[data-theme="dark"] ::selection{background:rgba(217,184,114,.24)}
+
+/* ─────────── motion ─────────── */
+@media (prefers-reduced-motion:no-preference){
+
+  /* hero — orchestrated load sequence */
+  .hero > *{animation:rise .9s cubic-bezier(.16,.84,.44,1) both}
+  .hero > .eyebrow{animation-delay:.04s}
+  .hero > .kicker{animation-delay:.12s}
+  .hero > .ornament{animation-delay:.74s}
+  .hero > .subtitle{animation-delay:.84s}
+  .hero > .lede{animation-delay:.94s}
+  .hero > .hero-cta{animation-delay:1.04s}
+  .title{animation:none}
+  .title span{
+    display:inline-block;
+    animation:letter 1.1s cubic-bezier(.2,.9,.28,1) both;
+    animation-delay:calc(.24s + var(--i) * .052s);
+  }
+  @keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+  @keyframes letter{
+    from{opacity:0;transform:translateY(.34em) scale(.965);filter:blur(7px)}
+    to{opacity:1;transform:none;filter:blur(0)}
+  }
+
+  /* scroll-driven reveals — degrade to fully visible where unsupported */
+  @supports (animation-timeline:view()){
+    .head,.statement,.band,.includes,.place,.facts,.reserve > *{
+      animation:reveal-in linear both;
+      animation-timeline:view();
+      animation-range:entry 4% cover 24%;
+    }
+    .hero-panel{
+      animation:panel-in linear both;
+      animation-timeline:view();
+      animation-range:entry 0% cover 36%;
+    }
+    @keyframes reveal-in{
+      from{opacity:0;transform:translateY(28px)}
+      to{opacity:1;transform:none}
+    }
+    @keyframes panel-in{
+      from{opacity:.45;transform:scale(.9) translateY(24px);border-radius:56px}
+      to{opacity:1;transform:none}
+    }
+  }
+  @supports (animation-timeline:scroll()){
+    .nav{
+      animation:nav-settle linear both;
+      animation-timeline:scroll();
+      animation-range:0 140px;
+    }
+    @keyframes nav-settle{
+      from{border-bottom-color:transparent;box-shadow:0 0 0 rgba(0,0,0,0)}
+      to{border-bottom-color:var(--line);box-shadow:0 10px 30px -26px rgba(23,21,15,.55)}
+    }
+  }
+
+  /* micro-interactions */
+  .btn-solid:hover{transform:translateY(-1px)}
+  .btn-ghost:hover{transform:translateY(-1px)}
+  .item h3{transition:color .25s ease}
+  .item:hover h3{color:var(--accent)}
+}
+
+/* ─────────── photography ─────────── */
+.panel img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;z-index:0}
+.panel::after{z-index:1}
+.panel.has-photo::before{content:none}
+.hero-panel{aspect-ratio:1024/260;min-height:0}
+@media (max-width:700px){.hero-panel{aspect-ratio:3/2}}
+.place-h2{
+  font-size:clamp(30px,4.4vw,50px);font-weight:600;letter-spacing:-.028em;
+  line-height:1.06;margin:14px 0 22px;text-wrap:balance;
+}
+.poster-fig{margin:0;max-width:400px;justify-self:center}
+.poster-fig img{
+  display:block;width:100%;height:auto;border-radius:12px;
+  box-shadow:var(--panel-shadow);
+}
+
 </style>
 </head>
 <body>
@@ -347,7 +437,7 @@ a{color:inherit;text-decoration:none}
   <section class="wrap hero">
     <p class="eyebrow">Sunday 27 September 2026 · Las Terrenas</p>
     <p class="kicker">Private Women</p>
-    <h1 class="title">Experience</h1>
+    <h1 class="title" aria-label="Experience"><span style="--i:0" aria-hidden="true">E</span><span style="--i:1" aria-hidden="true">X</span><span style="--i:2" aria-hidden="true">P</span><span style="--i:3" aria-hidden="true">E</span><span style="--i:4" aria-hidden="true">R</span><span style="--i:5" aria-hidden="true">I</span><span style="--i:6" aria-hidden="true">E</span><span style="--i:7" aria-hidden="true">N</span><span style="--i:8" aria-hidden="true">C</span><span style="--i:9" aria-hidden="true">E</span></h1>
     <div class="ornament" aria-hidden="true">
       <i></i>
       <svg width="26" height="26" viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round">
@@ -367,7 +457,8 @@ a{color:inherit;text-decoration:none}
 
   <!-- HORIZON -->
   <section class="wrap" style="padding-bottom:clamp(56px,7vw,88px)">
-    <div class="panel" role="img" aria-label="The Caribbean horizon at Playa Las Terrenas — sky, sea and sand.">
+    <div class="panel hero-panel has-photo">
+      <img src="scene.jpg" alt="Three women resting in beach chairs at the water.s edge, from the event poster artwork." decoding="async">
       <p class="panel-caption">
         <span>Relax</span><span>Beauty</span><span>Healthy food</span>
         <span>Great music</span><span>Connection</span><span>Networking</span>
@@ -490,7 +581,7 @@ a{color:inherit;text-decoration:none}
     <div class="place">
       <div>
         <p class="eyebrow">The location</p>
-        <h2 style="font-size:clamp(30px,4.4vw,50px);font-weight:600;letter-spacing:-.028em;line-height:1.06;margin:14px 0 22px;text-wrap:balance">Afreeka Beach Hotel,<br>Las Terrenas.</h2>
+        <h2 class="place-h2">Afreeka Beach Hotel,<br>Las Terrenas.</h2>
         <p>On the north coast of the Samaná peninsula, where the palms come down to the waterline and the bay stays calm enough to swim all day.</p>
         <p>A boutique beach hotel we take over for the occasion — close enough to town to reach easily, far enough down the sand to feel private.</p>
         <ul class="coords">
@@ -499,11 +590,31 @@ a{color:inherit;text-decoration:none}
           <li><b>Arrival</b> Sunday morning</li>
         </ul>
       </div>
-      <div class="panel" role="img" aria-label="Playa Las Terrenas: palms, turquoise bay and pale sand."></div>
+      <div class="panel has-photo">
+        <img src="bay.jpg" alt="Turquoise bay with a moored sailboat and palms, from the event poster artwork." loading="lazy" decoding="async">
+      </div>
     </div>
   </section>
 
   <hr class="rule">
+
+  <hr class="rule">
+
+  <!-- POSTER -->
+  <section class="section wrap" id="invite">
+    <div class="place">
+      <div>
+        <p class="eyebrow">The invitation</p>
+        <h2 class="place-h2">Save the date,<br>and pass it on.</h2>
+        <p>The women who most need a day like this are usually the last to book it for themselves. Send them the poster.</p>
+        <p>Sunday 27 September, Afreeka Beach Hotel. That is the whole message.</p>
+        <a class="link-arrow" href="poster.jpg" target="_blank" rel="noopener">Open the full poster<svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"></path></svg></a>
+      </div>
+      <figure class="poster-fig">
+        <img src="poster.jpg" alt="Private Women Experience poster: Sunday 27 September, Afreeka Beach Hotel, Las Terrenas." loading="lazy" decoding="async">
+      </figure>
+    </div>
+  </section>
 
   <!-- RESERVE -->
   <section class="section wrap reserve" id="reserve">
@@ -511,8 +622,8 @@ a{color:inherit;text-decoration:none}
     <h2>Reserve<br>your day</h2>
     <p class="lede">We keep the group small so the day stays what it promises to be. Message us and we'll confirm your place and send the practical details.</p>
     <div class="channels">
-      <a class="btn btn-solid" href="https://wa.me/00000000000" data-placeholder="whatsapp">Book on WhatsApp</a>
-      <a class="btn btn-ghost" href="mailto:hello@example.com?subject=Private%20Women%20Experience%20%E2%80%94%2027%20September" data-placeholder="email">Write to us</a>
+      <a class="btn btn-solid" href="https://wa.me/393319308529?text=Ciao%2C%20vorrei%20prenotare%20un%20posto%20per%20la%20Private%20Women%20Experience%20di%20domenica%2027%20settembre." target="_blank" rel="noopener">Book on WhatsApp</a>
+      <a class="btn btn-ghost" href="mailto:giulia.barani@hotmail.it?subject=Private%20Women%20Experience%20%E2%80%94%2027%20settembre&body=Ciao%2C%20vorrei%20informazioni%20per%20prenotare%20un%20posto.">Write to us</a>
     </div>
     <p class="note">Sunday 27 September · Afreeka Beach Hotel, Las Terrenas</p>
   </section>
